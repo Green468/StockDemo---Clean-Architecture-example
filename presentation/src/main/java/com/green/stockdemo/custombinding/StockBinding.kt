@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.green.stockdemo.customview.LineChartView
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -43,4 +44,10 @@ fun generateAnimateBlinkLastPrice(view: View, colorId: Int): ObjectAnimator {
     animator.repeatCount = 1
     animator.setAutoCancel(true)
     return animator
+}
+
+@BindingAdapter("app:line_chart")
+fun bindLineChart(view: LineChartView, model: LineChartView.LineChartModel?) {
+    view.lineChartModel = model
+    view.invalidate()
 }

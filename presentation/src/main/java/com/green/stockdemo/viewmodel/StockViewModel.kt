@@ -1,18 +1,13 @@
 package com.green.stockdemo.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.green.domain.entity.StockEntity
 import com.green.domain.usecase.GetStocksUseCase
 import com.green.domain.usecase.SubscribeStocksUseCase
+import com.green.stockdemo.entity.StockItemViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel

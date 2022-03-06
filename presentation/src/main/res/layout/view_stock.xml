@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.green.stockdemo.viewmodel.StockItemViewModel" />
+            type="com.green.stockdemo.entity.StockItemViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@{ viewModel.stockName }"/>
 
+        <com.green.stockdemo.customview.LineChartView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toLeftOf="@+id/txt_price"
+            app:line_chart="@{ viewModel.lineChart }"/>
+
         <TextView
+            android:id="@+id/txt_price"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"

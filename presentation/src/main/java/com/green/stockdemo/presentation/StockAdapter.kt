@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.green.stockdemo.databinding.ViewStockBinding
-import com.green.stockdemo.viewmodel.StockItemViewModel
+import com.green.stockdemo.entity.StockItemViewModel
 
 class StockAdapter(private val lifecycleOwner: LifecycleOwner, private val data: List<StockItemViewModel>, private val inflater: LayoutInflater) : RecyclerView.Adapter<StockAdapter.StockViewHolder>() {
     class StockViewHolder(lifecycleOwner: LifecycleOwner, val binding: ViewStockBinding) : RecyclerView.ViewHolder(binding.root) {
