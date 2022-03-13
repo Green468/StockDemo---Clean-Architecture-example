@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.green.stockdemo.entity.StockItemViewModel" />
+            type="com.green.stockdemo.entity.PortfolioItemViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,24 +23,52 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@{ viewModel.stockName }"/>
 
-        <com.green.stockdemo.customview.LineChartView
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            app:layout_constraintRight_toLeftOf="@+id/txt_price"
-            app:line_chart="@{ viewModel.lineChart }"/>
+        <TextView
+            android:id="@+id/txt_volume"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_buy_price"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:text="@{ viewModel.volumeStr }" />
+
+        <TextView
+            android:id="@+id/txt_buy_price"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_price"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            android:text="@{ viewModel.buyPriceStr }" />
 
         <TextView
             android:id="@+id/txt_price"
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_sell"
+            app:layout_constraintEnd_toStartOf="@+id/txt_portfolio_value"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center"
             app:price_bg_anim="@{ viewModel.priceBlinkColor }"
             app:price_color="@{ viewModel.priceBlinkColor }"
             android:text="@{ viewModel.priceStr }" />
+
+        <TextView
+            android:id="@+id/txt_portfolio_value"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_sell"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center"
+            app:price_color="@{ viewModel.portfolioColor }"
+            android:text="@{ viewModel.portfolioValue }" />
 
         <Button
             android:id="@+id/btn_sell"
@@ -50,9 +78,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:onClick="@{ () -> viewModel.buy() }"
-            android:text="buy"/>
+            android:onClick="@{ () -> viewModel.sell() }"
+            android:text="sell"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

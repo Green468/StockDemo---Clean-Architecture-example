@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="presentation/src/main/res/layout/fragment_portfolio.xml" value="0.16927083333333334" />
+        <entry key="presentation/src/main/res/layout/fragment_stock.xml" value="0.14266304347826086" />
+        <entry key="presentation/src/main/res/layout/view_portfolio.xml" value="0.16927083333333334" />
         <entry key="presentation/src/main/res/layout/view_stock.xml" value="0.16927083333333334" />
       </map>
     </option>

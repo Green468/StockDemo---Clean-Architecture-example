@@ -1,6 +1,8 @@
 package com.green.stockdemo.di
 
+import com.green.data.repository.FakePortfolioRepositoryImpl
 import com.green.data.repository.FakeRepositoryImpl
+import com.green.domain.repository.PortfolioRepository
 import com.green.domain.repository.Repository
 import dagger.Binds
 import dagger.Module
@@ -18,4 +20,10 @@ abstract class RepositoryModule {
     abstract fun bindRepository(
         repositoryImpl: FakeRepositoryImpl
     ): Repository
+
+    @Singleton
+    @Binds
+    abstract fun bindPortfolioRepository(
+        portfolioRepositoryImpl: FakePortfolioRepositoryImpl
+    ): PortfolioRepository
 }

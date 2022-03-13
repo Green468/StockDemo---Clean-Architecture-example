@@ -1,6 +1,5 @@
 package com.green.domain.usecase
 
-import android.util.Log
 import com.green.domain.entity.StockEntity
 import com.green.domain.repository.Repository
 import io.reactivex.*
@@ -12,6 +11,6 @@ import javax.inject.Singleton
 @Singleton
 class SubscribeStocksUseCase @Inject constructor(private val repository: Repository) {
     fun invoke(stocks: Collection<String>) : Flowable<Collection<StockEntity>> {
-        return repository.SubscribeStocks(stocks).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        return repository.subscribeStocks(stocks).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
     }
 }
